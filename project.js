@@ -10,7 +10,10 @@
 //     return 1
 // }
 
-//üstte yazılan function komutu ile aynı işlevi görüyor.
+//kullanıcı bilgilerini almak için
+const prompt = require("prompt-sync")();
+
+//9.satırda yazılan function komutu ile aynı işlevi görüyor.
 const paraYatir = () => {
 
 }
