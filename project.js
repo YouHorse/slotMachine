@@ -15,13 +15,21 @@ const prompt = require("prompt-sync")();
 
 //9.satırda yazılan function komutu ile aynı işlevi görüyor.
 const paraYatir = () => {
+    while (true) {
     const paraYatirmaMiktari = prompt("Yatırmak istediğiniz miktar: ")
 
 //kullanıcının para yatırmak istediği miktarı "float" olarak almamız gerekiyor
 const yatırılanSayi = parseFloat(paraYatirmaMiktari)
 
 // isNaN girdinin sayı olup olmadığını kontrol eder.
-    if (isNaN(yatırılanSayi) || yatırılanSayi <= 0)
+    if (isNaN(yatırılanSayi) || yatırılanSayi <= 0) {
     console.log("Geçersiz yatırma miktarı, tekrar deneyiniz.");
+    } else {
+        return yatırılanSayi;
+        }
+    }
 };
-paraYatir();
+
+
+const paraYatirmaMiktari = paraYatir();
+console.log(paraYatirmaMiktari);
