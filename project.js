@@ -3,3 +3,14 @@
 // 3. Bahis miktarını almak
 // 4. Slot makinesini çalıştırmak
 // 5. kullanıcının kazanıp kazanmadığını kontrol etmek
+// 6. kazandıysa parayı ver
+// 7. tekrar oynamak
+
+// function paraYatir(){
+//     return 1
+// }
+
+//üstte yazılan function komutu ile aynı işlevi görüyor.
+const paraYatir = () => {
+
+}
