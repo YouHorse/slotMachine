@@ -16,6 +16,10 @@ const prompt = require("prompt-sync")();
 //9.satırda yazılan function komutu ile aynı işlevi görüyor.
 const paraYatir = () => {
       const paraYatirmaMiktari = prompt("Yatırmak istediğiniz miktar: ")
-};
+
+//kullanıcının para yatırmak istediği miktarı "float" olarak almamız gerekiyor
+const yatırılanSayi = parseFloat(paraYatirmaMiktari)
+
+    };
 
 paraYatir();
