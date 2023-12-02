@@ -30,6 +30,19 @@ const yatırılanSayi = parseFloat(paraYatirmaMiktari)
     }
 };
 
+const getBahisHatti = () => {
+    while (true) {
+        const hatlar = prompt("Bahis oynmak istediğiniz hattı girin (1-3): ")
+        const secilenHatlar = parseFloat(hatlar)
+    
+        if (isNaN(secilenHatlar) || secilenHatlar <= 0 || secilenHatlar >= 3) {
+        console.log("Geçersiz hat, tekrar deneyiniz.");
+        } else {
+            return secilenHatlar;
+            }
+        }
+}
 
 const paraYatirmaMiktari = paraYatir();
-console.log(paraYatirmaMiktari);
+// console.log(paraYatirmaMiktari);
+const secilenHatlar = getBahisHatti();
