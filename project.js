@@ -43,6 +43,12 @@ const getBahisHatti = () => {
         }
 }
 
-const paraYatirmaMiktari = paraYatir();
+//bahisGir fonksiyonu bakiyeye bağlı olmalı ki bakiyesinden fazla bir bahis işlemi yapılmasın.
+const bahisGir = (bakiye) => {
+    
+}
+
+
+let bakiye = paraYatir();
 // console.log(paraYatirmaMiktari);
 const secilenHatlar = getBahisHatti();
