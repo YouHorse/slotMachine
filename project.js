@@ -33,7 +33,6 @@ const SYMBOL_DEGERLERİ = {
 
 
 
-
 //9.satırda yazılan function komutu ile aynı işlevi görüyor.
 const paraYatir = () => {
     while (true) {
@@ -78,8 +77,18 @@ const bahisGir = (bakiye, secilenHatlar) => {
         }
 }
 
+//makinenin dönmesi için
+const dön = () => {
+    const semboller = [];
+    for (const[sembol, sayi] of Object.entries(SEMBOL_SAYİLARİ)) {
+        for (let i = 0; i < sayi; i++){
+            semboller.push(sembol);
+        }
+        }
+    }
 
-let bakiye = paraYatir();
+    
+    let bakiye = paraYatir();
 // console.log(paraYatirmaMiktari);
 const secilenHatlar = getBahisHatti();
 const bahis = bahisGir(bakiye, secilenHatlar)
