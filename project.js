@@ -178,7 +178,7 @@ console.log("Kazandınız, $" + kazanc.toString());
 
     const tekrarOyna = prompt("Tekrar oynamak ister misiniz?\n Evet\n Hayır\n");
 
-    if (tekrarOyna.toLowerCase != "Evet") break;
+    if (tekrarOyna.toLowerCase() != "Evet") break;
 }
 
 };
