@@ -84,10 +84,27 @@ const dön = () => {
         for (let i = 0; i < sayi; i++){
             semboller.push(sembol);
         }
-        }
     }
 
-    
+    //seçilen sembolleri farklı bir yere aktarıyoruz ki makinede tekrar dönmesin
+    //fakat sonraki dönüş için tekrar sembolleri kullanmamız gerek
+    //bu yüzden semboller arrayinden değil de aşşağıdaki reels arraylerinin içinde bu sembolleri ayırıyourz
+    const reels = [[], [], []]
+    for (let i = 0; i < SÜTUNLAR; i++) {
+        const reelSembolleri = [...semboller];
+        for (let J = 0; J < SIRALAR; J++) {
+            //(0 ve array uzunluğu -1 arasında)rastgele bir index seçmek için
+            const randomIndex = Math.floor(Math.random() * reelSembolleri.length)
+            const secilenSemboller = reelSembolleri[randomIndex]
+            reels[i].push(secilenSemboller)
+            reelSembolleri.splice(randomIndex, 1)
+        }
+    } return reels
+}
+
+const reels = dön();
+console.log(reels);
+
     let bakiye = paraYatir();
 // console.log(paraYatirmaMiktari);
 const secilenHatlar = getBahisHatti();
