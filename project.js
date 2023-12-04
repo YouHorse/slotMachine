@@ -155,11 +155,32 @@ const kazancAl = (sıralar, bahis, hatlar) => {
     }
 }
 
+const oyun = () => {
+
 let bakiye = paraYatir();
+
+while (true) {
+    console.log("Bakiyeniz $" + balance);
 const secilenHatlar = getBahisHatti();
 const bahis = bahisGir(bakiye, secilenHatlar)
+    balance -= bahis * secilenHatlar
 const reels = dön();
 const sıralar = aktarma(reels);
 printSıralar(sıralar);
 const kazanc = kazancAl(sıralar, bahis, secilenHatlar);
+    balance += kazancAl
 console.log("Kazandınız, $" + kazanc.toString());
+
+    if (balance <= 0) {
+        console.log("Paranız bitti!");
+        break;
+    }
+
+    const tekrarOyna = prompt("Tekrar oynamak ister misiniz?\n Evet\n Hayır")
+
+    if (tekrarOyna != "Evet") break;
+}
+
+}
+
+oyun();
