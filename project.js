@@ -45,10 +45,20 @@ const getBahisHatti = () => {
 
 //bahisGir fonksiyonu bakiyeye bağlı olmalı ki bakiyesinden fazla bir bahis işlemi yapılmasın.
 const bahisGir = (bakiye) => {
+    while (true) {
+        const bahis = prompt("Bahis oynmak istediğiniz miktarı girin: ")
+        const bahisMiktari = parseFloat(bahis)
     
+        if (isNaN(bahisMiktari) || bahisMiktari <= 0 || bahisMiktari > bakiye) {
+        console.log("Geçersiz bahis, tekrar deneyiniz.");
+        } else {
+            return bahisMiktari;
+            }
+        }
 }
 
 
 let bakiye = paraYatir();
 // console.log(paraYatirmaMiktari);
 const secilenHatlar = getBahisHatti();
+const bahis = bahisGir(bakiye)
