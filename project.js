@@ -150,9 +150,9 @@ const kazancAl = (sıralar, bahis, hatlar) => {
 
     if (hepsiAyni) {
         kazanc += bahis * SYMBOL_DEGERLERİ[semboller[0]]
-}
-    return kazanc;
+        }
     }
+    return kazanc;
 }
 
 const oyun = () => {
@@ -166,9 +166,9 @@ const bahis = bahisGir(bakiye, secilenHatlar)
     bakiye -= bahis * secilenHatlar
 const reels = dön();
 const sıralar = aktarma(reels);
-printSıralar(sıralar);
+printSıralar(sıralar);                                                                                          
 const kazanc = kazancAl(sıralar, bahis, secilenHatlar);
-    bakiye += kazancAl
+    bakiye += kazanc
 console.log("Kazandınız, $" + kazanc.toString());
 
     if (bakiye <= 0) {
@@ -176,11 +176,11 @@ console.log("Kazandınız, $" + kazanc.toString());
         break;
     }
 
-    const tekrarOyna = prompt("Tekrar oynamak ister misiniz?\n Evet\n Hayır")
+    const tekrarOyna = prompt("Tekrar oynamak ister misiniz?\n Evet\n Hayır\n");
 
     if (tekrarOyna != "Evet") break;
 }
 
-}
+};
 
 oyun();
