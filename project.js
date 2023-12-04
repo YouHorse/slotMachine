@@ -160,18 +160,18 @@ const oyun = () => {
 let bakiye = paraYatir();
 
 while (true) {
-    console.log("Bakiyeniz $" + balance);
+    console.log("Bakiyeniz $" + bakiye);
 const secilenHatlar = getBahisHatti();
 const bahis = bahisGir(bakiye, secilenHatlar)
-    balance -= bahis * secilenHatlar
+    bakiye -= bahis * secilenHatlar
 const reels = dön();
 const sıralar = aktarma(reels);
 printSıralar(sıralar);
 const kazanc = kazancAl(sıralar, bahis, secilenHatlar);
-    balance += kazancAl
+    bakiye += kazancAl
 console.log("Kazandınız, $" + kazanc.toString());
 
-    if (balance <= 0) {
+    if (bakiye <= 0) {
         console.log("Paranız bitti!");
         break;
     }
