@@ -102,10 +102,31 @@ const dön = () => {
     } return reels
 }
 
-const reels = dön();
-console.log(reels);
 
-    let bakiye = paraYatir();
-// console.log(paraYatirmaMiktari);
+//sıralama şu şekilde olmak zorunda (transposing - aktarma)
+// ![[A B C], [D D D], [A A A]] 
+// [A D A]
+// [B D A]
+// [C D A]
+
+const aktarma = (reels) => {
+    const sıralar = [];
+
+    for (let i = 0; i < SIRALAR; i++) {
+        sıralar.push([])
+        for (let j = 0; j < SÜTUNLAR; j ++){
+            sıralar[i].push(reels[j][i])
+        }
+     }
+     return sıralar
+}
+
+
+let bakiye = paraYatir();
 const secilenHatlar = getBahisHatti();
 const bahis = bahisGir(bakiye, secilenHatlar)
+const reels = dön();
+const sıralar = aktarma(reels);
+console.log(reels);
+console.log(sıralar);
+
