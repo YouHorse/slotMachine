@@ -13,6 +13,27 @@
 //kullanıcı bilgilerini almak için
 const prompt = require("prompt-sync")();
 
+// sembolleri, sembollerin değerlerini, sembollerin gerçek değerleri ve makine hatlarını belirliyoruz.
+const SIRALAR = 3;
+const SÜTUNLAR = 3;
+
+const SEMBOL_SAYİLARİ = {
+    "A": 2,
+    "B": 4,
+    "C": 6,
+    "D": 8,
+}
+
+const SYMBOL_DEGERLERİ = {
+    "A": 5,
+    "B": 4,
+    "C": 3,
+    "D": 2,
+}
+
+
+
+
 //9.satırda yazılan function komutu ile aynı işlevi görüyor.
 const paraYatir = () => {
     while (true) {
