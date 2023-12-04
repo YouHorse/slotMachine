@@ -121,12 +121,45 @@ const aktarma = (reels) => {
      return sıralar
 }
 
+const printSıralar = (sıralar) => {
+    for (const sıra of sıralar){
+        let sıraString = "";
+        for (const[i, sembol] of sıra.entries()) {
+            sıraString += sembol;
+            if (i != sıra.length - 1){
+                sıraString += " | "
+            }
+        }
+        console.log(sıraString);
+    }
+}
+
+const kazancAl = (sıralar, bahis, hatlar) => {
+    let kazanc = 0;
+
+    for (let sıra = 0; sıra < hatlar; sıra++) {
+    const semboller = sıralar[sıra];
+    let hepsiAyni = true;
+    
+    for (const sembol of semboller){
+        if (sembol != semboller[0]){
+            hepsiAyni = false;
+            break; 
+        }
+    }
+
+    if (hepsiAyni) {
+        kazanc += bahis * SYMBOL_DEGERLERİ[semboller[0]]
+}
+    return kazanc;
+    }
+}
 
 let bakiye = paraYatir();
 const secilenHatlar = getBahisHatti();
 const bahis = bahisGir(bakiye, secilenHatlar)
 const reels = dön();
 const sıralar = aktarma(reels);
-console.log(reels);
-console.log(sıralar);
-
+printSıralar(sıralar);
+const kazanc = kazancAl(sıralar, bahis, secilenHatlar);
+console.log("Kazandınız, $" + kazanc.toString());
